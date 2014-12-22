@@ -1,0 +1,32 @@
+{
+  "name": "hash-to-array",
+  "version": "0.0.1",
+  "description": "Turns an arg hash into an array of arguments. Useful when running command line apps with child_process.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArtskydJ/hash-to-array.git"
+  },
+  "keywords": [
+    "hash",
+    "argv",
+    "stringify"
+  ],
+  "author": {
+    "name": "Joseph Dykstra",
+    "email": "josephdykstra@gmail.com",
+    "url": "http://josephdykstra.com"
+  },
+  "license": "VOL",
+  "bugs": {
+    "url": "https://github.com/ArtskydJ/hash-to-array/issues"
+  },
+  "homepage": "https://github.com/ArtskydJ/hash-to-array",
+  "devDependencies": {
+    "tap": "^0.4.13"
+  },
+  "dependencies": {}
+}

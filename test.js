@@ -4,9 +4,8 @@ var stringifyArgs = require('./index.js')
 function deepEqual(t0, description, obj, expected, ignoreIndex) {
 	t0.test(description, function (t) {
 		var result = stringifyArgs(obj)
-		console.log()
-		console.log(expected)
-		console.log(result)
+		//console.log(expected)
+		//console.log(result)
 		t.equal(result.length, expected.length, 'lengths are equal')
 		expected.forEach(function (r, i) {
 			t.notEqual(result.indexOf(r), -1, r + ' expected')
@@ -20,7 +19,7 @@ function deepEqual(t0, description, obj, expected, ignoreIndex) {
 }
 
 test('basic argument building', function (t0) {
-	deepEqual(t0, 'short arguments with number values', {
+	deepEqual(t0, 'short arguments', {
 		x: 2,
 		v: 50,
 		j: 'hello'
@@ -42,19 +41,28 @@ test('basic argument building', function (t0) {
 })
 
 test('special cases', function (t0) {
-	deepEqual(t0, 'true and false values', {
+	deepEqual(t0, 'true values', {
 		thingy: true,
 		anotherthingy: true,
-		dashes: false,
 		kool: 'lol',
 		trixy: 'true'
 	}, [
 		'--thingy',
 		'--anotherthingy',
-		'dashes',
 		'--kool', 'lol',
 		'--trixy', 'true'
 	])
+
+	deepEqual(t0, 'edge cases', {
+		dashes: false,
+		'': true,
+		'-': false
+	}, [
+		'dashes',
+		'--',
+		'-'
+	])
+
 	t0.end()
 })
 

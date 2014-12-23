@@ -10,5 +10,5 @@ module.exports = function args(hash) {
 }
 
 function prependDashes(key) {
-	return (key.length > 1 ? '--' : '-') + key
+	return (key.length !== 1 ? '--' : '-') + key
 }

@@ -1,6 +1,9 @@
 hash-to-array
 =============
 
+[![Dependency Status](https://david-dm.org/artskydj/hash-to-array.svg)](https://david-dm.org/artskydj/hash-to-array)
+[![devDependency Status](https://david-dm.org/artskydj/hash-to-array/dev-status.svg)](https://david-dm.org/artskydj/hash-to-array#info=devDependencies)
+
 Turns an arg hash into an array of arguments. Useful when running command line apps with child_process.
 
 #examples

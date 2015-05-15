@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/ArtskydJ/hash-to-array",
   "devDependencies": {
-    "tap": "^0.4.13"
+    "tap": "^1.0.4"
   },
   "dependencies": {}
 }

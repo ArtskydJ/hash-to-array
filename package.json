@@ -1,6 +1,6 @@
 {
   "name": "hash-to-array",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Turns an arg hash into an array of arguments. Useful when running command line apps with child_process.",
   "main": "index.js",
   "scripts": {

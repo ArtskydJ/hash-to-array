@@ -1,5 +1,4 @@
-hash-to-array
-=============
+# hash-to-array
 
 [![Build Status](https://travis-ci.org/ArtskydJ/hash-to-array.svg)](https://travis-ci.org/ArtskydJ/hash-to-array)
 [![Dependency Status](https://david-dm.org/artskydj/hash-to-array.svg)](https://david-dm.org/artskydj/hash-to-array)
@@ -9,7 +8,7 @@ Turns an arg hash into an array of arguments. Useful when running command line a
 
 Like [minimist](https://github.com/substack/minimist) in reverse.
 
-#examples
+# examples
 
 Please note that these examples are not good real-world use-cases. There are much better ways of accomplishing what is shown in these examples!
 
@@ -47,13 +46,14 @@ var args = hashToArray({
 spawn('browserify', args)
 ```
 
-#usage
+# usage
 
-##hashToArray(hash)
+## `var arr = hashToArray(hash)`
 
 - `hash` is a map of the input arguments and their corresponding values.
 	- If it is already an array, it returns it.
 	- If it is not an object, it stuffs it into an array. E.g. `7` -> `[7]`
+- **Returns** `arr`.
 
 ```js
 //Objects are transformed into arrays
@@ -71,6 +71,12 @@ hashToArray(17) // => [17]
 
 Note that boolean values do not get pushed to the array. They signify the presence of prepended dashes. (See examples.)
 
-#license
+# install
+
+With [npm](https://nodejs.org/download) do:
+
+	npm install hash-to-array
+
+# license
 
 [VOL](http://veryopenlicense.com)

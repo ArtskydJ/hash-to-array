@@ -70,6 +70,12 @@ hashToArray([ '-o', 'two.txt' ]) // => [ '-o', 'two.txt' ]
 // Other things are stuffed into arrays
 hashToArray('hi there') // => [ 'hi there' ]
 hashToArray(17) // => [ 17 ]
+
+hashToArray({
+    username: 'joseph',
+    password: 'lolwut',
+    'debug-level': 12
+}) // => [ '--username', 'joseph', '--password', 'lolwut', '--debug-level', 12 ]
 ```
 
 Note that boolean values do not get pushed to the array. They signify the presence of prepended dashes. (See examples.)

@@ -4,7 +4,7 @@
   "description": "Turns an arg hash into an array of arguments. Useful when running command line apps with child_process.",
   "main": "index.js",
   "scripts": {
-    "test": "tap test.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/ArtskydJ/hash-to-array",
   "devDependencies": {
-    "tap": "^1.0.4"
+    "tape": "^4.11.0"
   },
   "dependencies": {}
 }

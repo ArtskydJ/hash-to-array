@@ -1,4 +1,4 @@
-var test = require('tap').test
+var test = require('tape')
 var hashToArray = require('./index.js')
 
 function deepEqual(t0, description, obj, expected, ignoreIndex) {

@@ -1,8 +1,6 @@
 # hash-to-array
 
 [![Build Status](https://travis-ci.org/ArtskydJ/hash-to-array.svg)](https://travis-ci.org/ArtskydJ/hash-to-array)
-[![Dependency Status](https://david-dm.org/artskydj/hash-to-array.svg)](https://david-dm.org/artskydj/hash-to-array)
-[![devDependency Status](https://david-dm.org/artskydj/hash-to-array/dev-status.svg)](https://david-dm.org/artskydj/hash-to-array#info=devDependencies)
 
 Turns an arg hash into an array of arguments. Useful when running command line apps with child_process.
 
@@ -13,7 +11,7 @@ Like [minimist](https://github.com/substack/minimist) in reverse.
 Please note that these examples are not good real-world use-cases. There are much better ways of accomplishing what is shown in these examples!
 
 rm -rf dir:
-```js
+```node
 var hashToArray = require('hash-to-array')
 var spawn = require('child_process').spawn
 
@@ -26,7 +24,7 @@ spawn('rm', args)
 ```
 
 mkdir -p dir:
-```js
+```node
 var hashToArray = require('hash-to-array')
 var spawn = require('child_process').spawn
 
@@ -34,7 +32,7 @@ spawn('mkdir', hashToArray({p: true})) //=> [ '-p' ]
 ```
 
 browserify:
-```js
+```node
 var hashToArray = require('hash-to-array')
 var spawn = require('child_process').spawn
 
@@ -55,18 +53,23 @@ spawn('browserify', args)
 	- If it is not an object, it stuffs it into an array. E.g. `7` -> `[7]`
 - **Returns** `arr`.
 
+<!-- js
+var hashToArray = require('./')
+-->
+
 ```js
-//Objects are transformed into arrays
-hashToArray({ your: 'name' }) // => ['--your', 'name']
-hashToArray({ hello: true })  // => ['--hello']
-hashToArray({0: 8, 1: 4, length: 2}) // =>
+// Objects are transformed into arrays
+hashToArray({ your: 'name' }) // => [ '--your', 'name' ]
+hashToArray({ hello: true })  // => [ '--hello' ]
+hashToArray({ hello: false })  // => [ 'hello' ]
+hashToArray({ 0: 8, 1: false, length: 2 }) // => [ '-0', 8, '1', '--length', 2 ]
 
-//Arrays are unmodified
-hashToArray(['-o', 'two.txt']) // => ['-o', 'two.txt']
+// Arrays are unmodified
+hashToArray([ '-o', 'two.txt' ]) // => [ '-o', 'two.txt' ]
 
-//Other things are stuffed into arrays
-hashToArray('hi there') // => ['hi there']
-hashToArray(17) // => [17]
+// Other things are stuffed into arrays
+hashToArray('hi there') // => [ 'hi there' ]
+hashToArray(17) // => [ 17 ]
 ```
 
 Note that boolean values do not get pushed to the array. They signify the presence of prepended dashes. (See examples.)

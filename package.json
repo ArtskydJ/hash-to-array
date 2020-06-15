@@ -20,7 +20,7 @@
     "email": "josephdykstra@gmail.com",
     "url": "http://josephdykstra.com"
   },
-  "license": "VOL",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ArtskydJ/hash-to-array/issues"
   },

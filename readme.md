@@ -88,4 +88,4 @@ With [npm](https://nodejs.org/download) do:
 
 # license
 
-[VOL](http://veryopenlicense.com)
+[MIT](https://choosealicense.com/licenses/mit/)
